@@ -68,15 +68,14 @@ public class LinkedList<T> {
 
         SingleNode<T> current = head;
 
-        for (int i = 1; i < index - 1; ++i) {
+        for (int i = 0; i < index - 1; ++i) {
             current = current.next;
         }
 
-        if (current == null) {
+        if (current.next == null) {
             return false;
         }
-
-        current = current.next;
+        current.next = current.next.next;
 
         return true;
     }

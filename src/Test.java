@@ -18,5 +18,9 @@ public class Test {
         list.deleteWithData(4);
 
         list.print();
+
+        System.out.println(list.deleteWithIndex(2));
+
+        list.print();
    }
 }
