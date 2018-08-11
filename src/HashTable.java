@@ -27,7 +27,7 @@ public class HashTable<K,V>{
     public V get(K key) {
         int hash = hashFunction(key);
         for (HashNode<K,V> node = nodeArray[hash]; node != null; node = node.next) {
-            if (node.hash == hash && node.key.equals(key)) {
+            if (node.key == key) {
                 return node.value;
             }
         }
