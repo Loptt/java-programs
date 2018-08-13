@@ -1,7 +1,11 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class CTCI_P1 {
+public class CTCI_1_1 {
+
+    static boolean checkIfUniqueSlow(String string) {
+        return false;
+    }
 
     static boolean checkIfUnique(String string) {
 
