@@ -1,10 +1,21 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class CTCI_1_1 {
 
     static boolean checkIfUniqueSlow(String string) {
-        return false;
+
+        char[] arrString = string.toCharArray();
+        Arrays.sort(arrString);
+
+        for (int i = 0; i < arrString.length - 1; ++i) {
+            if (Arrays.binarySearch(arrString, i + 1, arrString.length - 1 ,arrString[i]) >= 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     static boolean checkIfUnique(String string) {
@@ -27,6 +38,13 @@ public class CTCI_1_1 {
         String input = reader.next();
 
         if (checkIfUnique(input)) {
+            System.out.println("Unique");
+        }
+        else {
+            System.out.println("Repeated");
+        }
+
+        if (checkIfUniqueSlow(input)) {
             System.out.println("Unique");
         }
         else {
